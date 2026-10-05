@@ -4,7 +4,7 @@
     "name": "Ghana"
   },
   "dataVersion": "1.0.0",
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-10-05",
   "totalRoutes": 198,
   "summary": {
     "visa_free": 40,
@@ -3030,7 +3030,12 @@
         "evisa": false,
         "onArrival": false,
         "multipleEntry": true,
-        "notes": "UK Standard Visitor Visa required for Ghanaian citizens. Apply online via gov.uk. Processing time: 3-6 weeks."
+        "notes": "UK Standard Visitor Visa required for Ghanaian citizens. Apply online via gov.uk. The GBP 135 fee is for the Standard Visitor visa allowing a visit of up to 6 months. A decision usually takes 3 weeks after identity and supporting documents are provided; delays are possible. These fee and processing-time facts do not apply to work or long-term study visas.",
+        "processingDays": "Usually 3 weeks after identity and supporting documents are provided; delays are possible",
+        "cost": {
+          "amount": 135,
+          "currency": "GBP"
+        }
       },
       "documents": {
         "passport": {
@@ -3059,7 +3064,28 @@
         "lastChecked": null,
         "source": null
       },
-      "lastUpdated": "2025-12-14T01:57:39.727631"
+      "lastUpdated": "2026-10-05",
+      "source": {
+        "url": "https://www.gov.uk/standard-visitor/apply-standard-visitor-visa",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-05",
+        "pageSection": "Visa fees; How long it takes to get a decision",
+        "verificationPath": "GOV.UK > Visit the UK as a Standard Visitor > Apply for a Standard Visitor visa > Visa fees / How long it takes to get a decision",
+        "exactQuote": "Standard Visitor visa | £135 | 6 months",
+        "confidence": "verified",
+        "notes": "Verification covers only the six-month Standard Visitor fee and usual decision time. Other existing route facts, including document and transit requirements, have not been reverified.",
+        "supportingSources": [
+          {
+            "url": "https://www.gov.uk/guidance/visa-processing-times-applications-outside-the-uk",
+            "governmentDomain": true,
+            "accessedDate": "2026-10-05",
+            "pageSection": "Visit visas; When your application processing time starts; When you might wait longer",
+            "verificationPath": "GOV.UK > Visa processing times: applications outside the UK > Visit visas",
+            "exactQuote": "Standard Visitor | 3 weeks",
+            "confidence": "verified"
+          }
+        ]
+      }
     },
     {
       "to": {
