@@ -4,7 +4,7 @@
     "name": "Panama"
   },
   "dataVersion": "1.0.0",
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-10-07",
   "totalRoutes": 198,
   "summary": {
     "visa_free": 88,
@@ -615,12 +615,12 @@
         "required": false,
         "policy": "visa_free",
         "type": null,
-        "freeDays": 28,
+        "freeDays": 90,
         "maxStay": null,
         "evisa": false,
         "onArrival": false,
         "multipleEntry": false,
-        "notes": "28 days visa-free stay"
+        "notes": "90 days visa-free stay"
       },
       "documents": {
         "passport": {
@@ -649,7 +649,16 @@
         "lastChecked": null,
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T04:16:04.456458"
+      "lastUpdated": "2026-01-19T04:16:04.456458",
+      "source": {
+        "url": "https://www.foreign.gov.bb/wp-content/uploads/2025/11/Updated-visa-list-May-09-2025-002.pdf",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-07",
+        "verificationPath": "VISA REQUIREMENTS FOR FOREIGN NATIONALS ENTERING BARBADOS > PANAMA row",
+        "exactQuote": "No Visa required. Visa Abolition Agreement established April 02, 2003. Max. stay for Panamanians (90) days.",
+        "confidence": "verified",
+        "notes": "Corrects the previous 28-day value to the official 90-day maximum."
+      }
     },
     {
       "to": {
