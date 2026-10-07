@@ -4,7 +4,7 @@
     "name": "Croatia"
   },
   "dataVersion": "1.0.0",
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-10-07",
   "totalRoutes": 198,
   "summary": {
     "visa_free": 119,
@@ -615,12 +615,12 @@
         "required": false,
         "policy": "visa_free",
         "type": null,
-        "freeDays": 90,
+        "freeDays": 28,
         "maxStay": null,
         "evisa": false,
         "onArrival": false,
         "multipleEntry": false,
-        "notes": "90 days visa-free stay"
+        "notes": "28 days visa-free stay"
       },
       "documents": {
         "passport": {
@@ -649,7 +649,16 @@
         "lastChecked": null,
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T04:15:02.030869"
+      "lastUpdated": "2026-01-19T04:15:02.030869",
+      "source": {
+        "url": "https://www.foreign.gov.bb/wp-content/uploads/2025/11/Updated-visa-list-May-09-2025-002.pdf",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-07",
+        "verificationPath": "VISA REQUIREMENTS FOR FOREIGN NATIONALS ENTERING BARBADOS > CROATIA row",
+        "exactQuote": "No Visa required. Croatians can stay for a maximum twenty-eight (28) days without a visa.",
+        "confidence": "verified",
+        "notes": "Corrects the previous 90-day value to the official 28-day maximum."
+      }
     },
     {
       "to": {
