@@ -339,12 +339,22 @@ After your PR is merged and verified:
 
 ## 🤖 AI Contributions & Review Policy
 
-AI-assisted contributions are welcome **under the same rules as everyone else** — but note:
+AI-assisted contributions are welcome, but they follow **their own rules, stricter than the rules for human contributors**:
+
+1. **Disclosure is mandatory.** Every PR must state in its description whether it was AI-assisted. Undisclosed AI use discovered later means the PR is closed or reverted, unpaid, and the account is permanently banned.
+2. **Minimum payout threshold: 5 merged contributions.** AI-assisted contributors are not paid for their first merged item. Payment eligibility begins once an account has **5 or more merged contributions**; the first payout then covers all merged items to date. Human contributors doing documented manual verification have no threshold.
+3. **Monthly cap:** AI-assisted work is paid up to **10 items / £20 per contributor per month**. Anything above that is welcome but unpaid.
+4. **Account age gate:** payouts only go to GitHub accounts that are **30+ days old with real activity history**. Younger accounts may contribute; their payouts are held until the account matures.
+5. **Two open bounty PRs maximum per account** until one is merged. Additional PRs are closed unreviewed.
+6. **High-value types (`new_origin_country`, `critical_change`) require maintainer pre-assignment** via an issue before opening the PR. Unassigned PRs in these categories are closed unpaid.
+7. **One payout identity per contributor.** Multiple accounts paying to the same PayPal/Wise/bank destination are treated as one contributor and share one cap and one threshold.
+
+Rules that apply to everyone, human or AI:
 
 - **Every submission is reviewed by a human maintainer.** The maintainer verifies your cited source before merging; unverifiable or fabricated sources get the PR closed, unpaid, and repeat offenders banned.
 - **Payment eligibility is at the maintainer's sole discretion.** Low-effort, duplicated, or bulk-generated submissions that add no verified value will be closed without payment.
 - **Duplicate claims: the first PR to be merged wins the bounty.** Claiming a bounty in an issue does not reserve it.
-- One bounty, one payment — regardless of how many accounts submit it.
+- One bounty, one payment, regardless of how many accounts submit it.
 
 ---
 
