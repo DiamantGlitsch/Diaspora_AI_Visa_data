@@ -103,8 +103,8 @@ We welcome contributions! Every visa rule change, every new route, every correct
                                                        ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │  Manual Payment │◄───│  Cross-check    │◄───│  Email          │
-│  via PayPal/    │    │  PR details     │    │  info@diaspora  │
-│  Wise/Bank      │    │                 │    │  ai.dev         │
+│  via PayPal/    │    │  PR details     │    │  contributors@  │
+│  Wise/Bank      │    │                 │    │  diasporaai.dev │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 

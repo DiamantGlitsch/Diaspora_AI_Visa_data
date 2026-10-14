@@ -477,7 +477,7 @@ You'll see one of two results:
 **✅ Verification Passed:**
 ```
 Your contribution has been verified! 
-To receive your bounty payment, email info@diasporaai.dev
+To receive your bounty payment, email contributors@diasporaai.dev
 ```
 
 **❌ Verification Failed:**
@@ -489,7 +489,7 @@ Some sources could not be verified. Please update your PR.
 
 Once your PR shows **✅ Verification Passed**, send an email to:
 
-📧 **info@diasporaai.dev**
+📧 **contributors@diasporaai.dev**
 
 **Email Subject:**
 ```
@@ -512,7 +512,7 @@ Payment Details: [your payment email or bank details]
 
 1. We cross-check your email against our verified contributors list
 2. We verify your GitHub username, PR number, and fork match our records
-3. Payment is sent within **3-5 business days**
+3. Payment is sent in the next monthly batch, on the **11th** (see [Bounty Rewards](#bounty-rewards))
 
 ### Payment Methods
 
@@ -532,11 +532,7 @@ Payment Details: [your payment email or bank details]
 
 ### Timeline
 
-| Contributor Type | Payment Timeline |
-|-----------------|------------------|
-| First-time contributors | 5-7 business days |
-| Returning contributors | 3-5 business days |
-| Trusted contributors (5+ PRs) | 1-3 business days |
+All bounties are paid in one monthly batch on the **11th**. PRs merged and claimed by the end of a month are paid on the 11th of the following month. AI-assisted contributions are also subject to the thresholds and caps in the [AI Contributions & Review Policy](#ai-contributions--review-policy).
 
 ---
 
