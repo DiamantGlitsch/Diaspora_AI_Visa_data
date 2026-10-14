@@ -90,7 +90,7 @@ We welcome contributions! Every visa rule change, every new route, every correct
 4. **⚠️ REQUIRED: Include official government source URL** — Every change MUST link to the official government immigration/visa website
 5. **Submit PR** — Our automation verifies your sources automatically
 6. **Wait for verification** — Bot will comment ✅ or ❌ on your PR
-7. **Email for payment** — Once verified, email `info@diasporaai.dev` with your payment details
+7. **Email for payment** — Once verified, email `contributors@diasporaai.dev` with your payment details (bounties are paid monthly, on the 11th)
 
 ### How Bounty Payments Work
 
@@ -103,8 +103,8 @@ We welcome contributions! Every visa rule change, every new route, every correct
                                                        ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │  Manual Payment │◄───│  Cross-check    │◄───│  Email          │
-│  via PayPal/    │    │  PR details     │    │  info@diaspora  │
-│  Wise/Bank      │    │                 │    │  ai.dev         │
+│  via PayPal/    │    │  PR details     │    │  contributors@  │
+│  Wise/Bank      │    │                 │    │  diasporaai.dev │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
@@ -126,12 +126,12 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 | Contribution Type | Reward |
 |-------------------|--------|
-| Verified update to one route | £15 |
-| New origin country (50+ routes) | £80 |
-| Critical policy change | £30 |
-| Document privilege rules | £20 |
-| Bug fix / correction | £10 |
-| Verify existing data | £5 |
+| Verified update to one route | £2 |
+| New origin country (50+ routes) | £10 |
+| Critical policy change | £5 |
+| Document privilege rules | £3 |
+| Bug fix / correction | £2 |
+| Verify existing data | £1 |
 
 *See [CONTRIBUTING.md](CONTRIBUTING.md) for payment details.*
 

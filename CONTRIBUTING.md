@@ -2,6 +2,8 @@
 
 Thank you for your interest in contributing! Every update helps thousands of diaspora travelers make informed decisions.
 
+> **Last updated: 13 October 2026** — bounty rates revised and the payment schedule moved to a monthly cycle (see [Bounty Rewards](#bounty-rewards) and [AI Contributions & Review Policy](#ai-contributions--review-policy)). PRs opened before this date are honored at the rates published when they were opened.
+
 ---
 
 ## 📋 Table of Contents
@@ -12,6 +14,7 @@ Thank you for your interest in contributing! Every update helps thousands of dia
 - [Data Requirements](#data-requirements)
 - [Source Verification](#source-verification)
 - [Bounty Rewards](#bounty-rewards)
+- [AI Contributions & Review Policy](#ai-contributions--review-policy)
 - [Code of Conduct](#code-of-conduct)
 
 ---
@@ -36,13 +39,13 @@ Thank you for your interest in contributing! Every update helps thousands of dia
 
 ## 📊 Types of Contributions
 
-### 1. Update Existing Route (`verified_update`) — £15
+### 1. Update Existing Route (`verified_update`) — £2
 
 Update visa requirements for an existing route when policies change.
 
 **Example:** Ghana → UK visa processing time changed from 3 weeks to 15 business days.
 
-### 2. Add New Origin Country (`new_origin_country`) — £80
+### 2. Add New Origin Country (`new_origin_country`) — £10
 
 Add a completely new origin country with minimum 50 destination routes.
 
@@ -51,7 +54,7 @@ Add a completely new origin country with minimum 50 destination routes.
 - At least 10 must have official source verification
 - Include popular destinations (UK, US, Canada, Germany, France)
 
-### 3. Critical Policy Change (`critical_change`) — £30
+### 3. Critical Policy Change (`critical_change`) — £5
 
 Report and document a significant policy change that affects many travelers.
 
@@ -60,7 +63,7 @@ Report and document a significant policy change that affects many travelers.
 - Country removing visa-free access
 - New transit visa requirements
 
-### 4. Document Privileges (`document_privilege`) — £20
+### 4. Document Privileges (`document_privilege`) — £3
 
 Add rules for how holding a visa from one country unlocks access to others.
 
@@ -68,11 +71,11 @@ Add rules for how holding a visa from one country unlocks access to others.
 
 This is the "I have a UK visa, where else can I travel visa-free?" feature.
 
-### 5. Bug Fix (`bug_fix`) — £10
+### 5. Bug Fix (`bug_fix`) — £2
 
 Correct incorrect or outdated information in existing data.
 
-### 6. Verification (`verification`) — £5
+### 6. Verification (`verification`) — £1
 
 Verify that existing data is still accurate by checking against current official sources.
 
@@ -213,14 +216,11 @@ Examples:
 - Applies to nationals who normally require Albanian visa
 ```
 
-### Bounty: £20 per Valid Addition
+### Bounty: £3 per Valid Addition
 
-Each new document privilege entry (with verified government source) earns £20.
+Each new document privilege entry (with verified government source) earns £3.
 
-If you add **5+ countries** in one PR for the same anchor document, you get a bonus:
-- 5-10 countries: £100 + £10 bonus = **£110**
-- 11-20 countries: £200 + £30 bonus = **£230**
-- 20+ countries: £400 + £50 bonus = **£450**
+If you add **5+ countries** in one PR for the same anchor document, you get a **+20% bonus** on the PR total.
 
 ---
 
@@ -326,7 +326,7 @@ Your contribution is immediately live in the Diaspora AI visa API!
 
 After your PR is merged and verified:
 
-1. **Send an email to:** `info@diasporaai.dev`
+1. **Send an email to:** `contributors@diasporaai.dev`
 2. **Subject:** `Bounty Payment - PR #[YOUR_PR_NUMBER]`
 3. **Include:**
    - Your GitHub username
@@ -335,7 +335,26 @@ After your PR is merged and verified:
    - Payment preference: PayPal, Wise, or bank transfer
    - Payment details (email or bank info)
 
-We'll cross-check your details against our verified list and process payment within 1 week.
+**Bounty payments are processed once a month, on the 11th.** Payments for PRs merged and claimed by the end of a month go out on the 11th of the following month, after cross-checking against the merged-PR list. Only PRs that were merged — not just opened — qualify.
+
+## 🤖 AI Contributions & Review Policy
+
+AI-assisted contributions are welcome, but they follow **their own rules, stricter than the rules for human contributors**:
+
+1. **Disclosure is mandatory.** Every PR must state in its description whether it was AI-assisted. Undisclosed AI use discovered later means the PR is closed or reverted, unpaid, and the account is permanently banned.
+2. **Minimum payout threshold: 5 merged contributions.** AI-assisted contributors are not paid for their first merged item. Payment eligibility begins once an account has **5 or more merged contributions**; the first payout then covers all merged items to date. Human contributors doing documented manual verification have no threshold.
+3. **Monthly cap:** AI-assisted work is paid up to **10 items / £20 per contributor per month**. Anything above that is welcome but unpaid.
+4. **Account age gate:** payouts only go to GitHub accounts that are **30+ days old with real activity history**. Younger accounts may contribute; their payouts are held until the account matures.
+5. **Two open bounty PRs maximum per account** until one is merged. Additional PRs are closed unreviewed.
+6. **High-value types (`new_origin_country`, `critical_change`) require maintainer pre-assignment** via an issue before opening the PR. Unassigned PRs in these categories are closed unpaid.
+7. **One payout identity per contributor.** Multiple accounts paying to the same PayPal/Wise/bank destination are treated as one contributor and share one cap and one threshold.
+
+Rules that apply to everyone, human or AI:
+
+- **Every submission is reviewed by a human maintainer.** The maintainer verifies your cited source before merging; unverifiable or fabricated sources get the PR closed, unpaid, and repeat offenders banned.
+- **Payment eligibility is at the maintainer's sole discretion.** Low-effort, duplicated, or bulk-generated submissions that add no verified value will be closed without payment.
+- **Duplicate claims: the first PR to be merged wins the bounty.** Claiming a bounty in an issue does not reserve it.
+- One bounty, one payment, regardless of how many accounts submit it.
 
 ---
 
@@ -434,12 +453,12 @@ We maintain a list of verified government domains in `sources/verified-domains.j
 
 | Type | Reward |
 |------|--------|
-| `verified_update` | £15 |
-| `new_origin_country` | £80 |
-| `critical_change` | £30 |
-| `document_privilege` | £20 |
-| `bug_fix` | £10 |
-| `verification` | £5 |
+| `verified_update` | £2 |
+| `new_origin_country` | £10 |
+| `critical_change` | £5 |
+| `document_privilege` | £3 |
+| `bug_fix` | £2 |
+| `verification` | £1 |
 
 ### How to Get Paid (Step-by-Step)
 
@@ -458,7 +477,7 @@ You'll see one of two results:
 **✅ Verification Passed:**
 ```
 Your contribution has been verified! 
-To receive your bounty payment, email info@diasporaai.dev
+To receive your bounty payment, email contributors@diasporaai.dev
 ```
 
 **❌ Verification Failed:**
@@ -470,7 +489,7 @@ Some sources could not be verified. Please update your PR.
 
 Once your PR shows **✅ Verification Passed**, send an email to:
 
-📧 **info@diasporaai.dev**
+📧 **contributors@diasporaai.dev**
 
 **Email Subject:**
 ```
@@ -493,7 +512,7 @@ Payment Details: [your payment email or bank details]
 
 1. We cross-check your email against our verified contributors list
 2. We verify your GitHub username, PR number, and fork match our records
-3. Payment is sent within **3-5 business days**
+3. Payment is sent in the next monthly batch, on the **11th** (see [Bounty Rewards](#bounty-rewards))
 
 ### Payment Methods
 
@@ -513,11 +532,7 @@ Payment Details: [your payment email or bank details]
 
 ### Timeline
 
-| Contributor Type | Payment Timeline |
-|-----------------|------------------|
-| First-time contributors | 5-7 business days |
-| Returning contributors | 3-5 business days |
-| Trusted contributors (5+ PRs) | 1-3 business days |
+All bounties are paid in one monthly batch on the **11th**. PRs merged and claimed by the end of a month are paid on the 11th of the following month. AI-assisted contributions are also subject to the thresholds and caps in the [AI Contributions & Review Policy](#ai-contributions--review-policy).
 
 ---
 
