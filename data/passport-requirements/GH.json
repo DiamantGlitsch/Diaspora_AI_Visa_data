@@ -4,7 +4,7 @@
     "name": "Ghana"
   },
   "dataVersion": "1.0.0",
-  "lastUpdated": "2026-10-15T03:57:44",
+  "lastUpdated": "2026-10-15T19:35:48Z",
   "totalRoutes": 198,
   "summary": {
     "visa_free": 40,
@@ -3549,7 +3549,8 @@
         "evisa": true,
         "onArrival": false,
         "multipleEntry": false,
-        "notes": "Electronic visa (e-Visa) required. Apply online before travel. Processing typically takes 3-7 business days."
+        "notes": "A visit/transit visa is required for Ghanaian ordinary passport holders. Applications can be submitted online. Processing normally takes four weeks after all required documents have been received; approval is discretionary.",
+        "processingDays": "Normally four weeks after receipt of all required documents"
       },
       "documents": {
         "passport": {
@@ -3569,16 +3570,34 @@
         "notes": null
       },
       "transit": {
-        "visaRequired": null,
-        "notes": "Transit usually permitted. Check specific requirements."
+        "visaRequired": true,
+        "notes": "Ghanaian ordinary passport holders need a visa even for airside transit. Ghanaian diplomatic and official passport holders are exempt for visits of up to 14 days.",
+        "source": {
+          "url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+          "governmentDomain": true,
+          "accessedDate": "2026-10-15",
+          "verificationPath": "Immigration Department > Visas / Entry Permits > Visit/Transit > Visit Visa / Entry Permit Requirements > Part II, Ghana (row 78), remark ^",
+          "exactQuote": "including those who are in transit and remain on the airside",
+          "confidence": "verified",
+          "notes": "The Ghana row is marked Visa Required^. Remark ^ includes airside transit and provides the diplomatic/official passport exception."
+        }
       },
       "meta": {
         "riskLevel": "medium",
         "confidence": "verified",
-        "lastChecked": "2026-01-19",
+        "lastChecked": "2026-10-15",
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T03:05:53.123"
+      "lastUpdated": "2026-10-15T19:35:48Z",
+      "source": {
+        "url": "https://www.immd.gov.hk/eng/services/visas/visit_transit.html",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-15",
+        "verificationPath": "Immigration Department > Our Services > Visas / Entry Permits > Visit/Transit > Entry Visas / Permits > Before Applying > Processing Time",
+        "exactQuote": "It normally takes four weeks to process a visit/transit visa/entry permit application upon receipt of all the required documents.",
+        "confidence": "verified",
+        "notes": "Verifies processing time and application procedure. The transit-specific source verifies the Ghana passport requirement and exception. Other document requirements were not reverified in this correction."
+      }
     },
     {
       "to": {
