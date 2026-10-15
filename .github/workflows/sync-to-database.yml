@@ -82,6 +82,8 @@ jobs:
                         visa_on_arrival: route.visa?.onArrival || false,
                         allowed_stay_days: route.visa?.maxStay || null,
                         multiple_entry_possible: route.visa?.multipleEntry || null,
+                        cost: route.visa?.cost || null,
+                        processing_days: route.visa?.processingDays || null,
                         notes: route.visa?.notes || null
                       },
                       transit_info: route.transit || {},
