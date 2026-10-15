@@ -36,6 +36,12 @@ jobs:
 
       - name: Verify Government Sources
         id: verify
+        env:
+          GH_CONTRIBUTOR: ${{ github.event.pull_request.user.login }}
+          GH_PR_NUMBER: ${{ github.event.pull_request.number }}
+          GH_PR_TITLE: ${{ github.event.pull_request.title }}
+          GH_PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_FORK_REPO: ${{ github.event.pull_request.head.repo.full_name }}
         run: |
           echo "🔍 Verifying government source URLs..."
           
@@ -129,11 +135,11 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           
           # Get contributor info
-          CONTRIBUTOR="${{ github.event.pull_request.user.login }}"
-          PR_NUMBER="${{ github.event.pull_request.number }}"
-          PR_TITLE="${{ github.event.pull_request.title }}"
-          PR_URL="${{ github.event.pull_request.html_url }}"
-          FORK_REPO="${{ github.event.pull_request.head.repo.full_name }}"
+          CONTRIBUTOR="$GH_CONTRIBUTOR"
+          PR_NUMBER="$GH_PR_NUMBER"
+          PR_TITLE="$GH_PR_TITLE"
+          PR_URL="$GH_PR_URL"
+          FORK_REPO="$GH_FORK_REPO"
           
           # Determine if verification passed
           if [ "$VERIFIED_COUNT" -gt 0 ] && [ "$FAILED_COUNT" -eq 0 ]; then
