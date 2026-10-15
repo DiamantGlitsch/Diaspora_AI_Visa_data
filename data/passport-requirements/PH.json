@@ -4,7 +4,7 @@
     "name": "Philippines"
   },
   "dataVersion": "1.0.0",
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-10-07",
   "totalRoutes": 198,
   "summary": {
     "visa_free": 36,
@@ -649,7 +649,16 @@
         "lastChecked": null,
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T04:08:59.263628"
+      "lastUpdated": "2026-01-19T04:08:59.263628",
+      "source": {
+        "url": "https://www.foreign.gov.bb/wp-content/uploads/2025/11/Updated-visa-list-May-09-2025-002.pdf",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-07",
+        "verificationPath": "VISA REQUIREMENTS FOR FOREIGN NATIONALS ENTERING BARBADOS > PHILIPPINES row",
+        "exactQuote": "No Visa required. Visa Abolition Agreement established – May 16, 2019.",
+        "confidence": "verified",
+        "notes": "Verification scope is limited to the visa-free requirement; the source row does not independently establish the stored stay duration."
+      }
     },
     {
       "to": {
