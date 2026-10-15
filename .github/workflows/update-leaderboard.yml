@@ -19,10 +19,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ACTIONS_PUSH_TOKEN }}
-        with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTIONS_PUSH_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
