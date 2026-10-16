@@ -7835,12 +7835,12 @@
         "required": false,
         "policy": "visa_free",
         "type": null,
-        "freeDays": 30,
-        "maxStay": 30,
+        "freeDays": null,
+        "maxStay": null,
         "evisa": false,
         "onArrival": false,
         "multipleEntry": false,
-        "notes": "Ghanaian citizens can visit Singapore visa-free for up to 30 days. Ensure your passport is valid for at least 6 months."
+        "notes": "An ordinary Ghanaian passport is not on ICA's list of visa-required travel documents. The permitted stay is determined by the Visit Pass issued at entry; check the e-Pass for the granted duration and last permitted day instead of assuming a fixed 30-day entitlement."
       },
       "documents": {
         "passport": {
@@ -7857,7 +7857,7 @@
           },
           "yellowFeverCertificate": true
         },
-        "notes": null
+        "notes": "Short-term visitors seeking immigration clearance must submit the free SG Arrival Card with electronic health declaration within three days including the day of arrival. It is not a visa. Travellers remaining in airside transit without immigration clearance are exempt from SGAC. Passport validity must be at least six months; carry sufficient funds and proof of onward travel."
       },
       "transit": {
         "visaRequired": null,
@@ -7866,10 +7866,19 @@
       "meta": {
         "riskLevel": "low",
         "confidence": "verified",
-        "lastChecked": "2026-01-19",
+        "lastChecked": "2026-10-16",
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T03:05:53.124"
+      "lastUpdated": "2026-10-16T10:11:46Z",
+      "source": {
+        "url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-16",
+        "verificationPath": "ICA > Entering Singapore > General Entry Requirements > Travel Documents, SG Arrival Card, Immigration Processes at the Checkpoints",
+        "exactQuote": "within three (3) days (including the day of arrival)",
+        "confidence": "verified",
+        "notes": "ICA requires SGAC for short-term visitors seeking entry, with an airside-transit exemption. Visa-required list and e-Pass duration: https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements . Ghana is absent from the country list; the ordinary-passport qualification excludes separately listed special travel documents. Other document and transit fields were not reverified."
+      }
     },
     {
       "to": {
