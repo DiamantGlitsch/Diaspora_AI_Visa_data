@@ -4,7 +4,7 @@
     "name": "Ghana"
   },
   "dataVersion": "1.0.0",
-  "lastUpdated": "2026-10-15T19:35:48Z",
+  "lastUpdated": "2026-10-16T10:09:46Z",
   "totalRoutes": 198,
   "summary": {
     "visa_free": 40,
@@ -6987,7 +6987,7 @@
         "evisa": false,
         "onArrival": false,
         "multipleEntry": false,
-        "notes": "Ghanaian citizens can visit Philippines visa-free for up to 30 days. Ensure your passport is valid for at least 6 months."
+        "notes": "Ghanaian citizens are eligible for an initial visa-free stay of up to 30 days. A passport valid for at least six months beyond the intended stay and a return or onward ticket are required."
       },
       "documents": {
         "passport": {
@@ -7013,10 +7013,19 @@
       "meta": {
         "riskLevel": "low",
         "confidence": "verified",
-        "lastChecked": "2026-01-19",
+        "lastChecked": "2026-10-15",
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T03:05:53.124"
+      "lastUpdated": "2026-10-15T19:38:44Z",
+      "source": {
+        "url": "https://evisa.gov.ph/page/policy?l1=Non-Immigrant+Visas&l2=Free+to+enter+the+Philippines+without+Visa",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-15",
+        "verificationPath": "eVisaPH > PH Visa Policy > Non-Immigrant Visas > Free to enter the Philippines without Visa > introductory requirements and country list > Ghana",
+        "exactQuote": "without a visa for an initial stay of thirty (30) days",
+        "confidence": "verified",
+        "notes": "Ghana is explicitly listed. The preceding paragraph requires six months of passport validity beyond the intended stay and a return or onward ticket. Verification is limited to visa-free eligibility, initial duration, passport validity and ticket requirement; other document and transit fields were not reverified."
+      }
     },
     {
       "to": {
