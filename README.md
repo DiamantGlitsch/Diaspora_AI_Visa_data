@@ -2,7 +2,7 @@
 
 **The world's first open-source, community-maintained visa requirements database for diaspora travelers.**
 
-[![Data Freshness](https://img.shields.io/badge/data-updated%20March%202026-brightgreen)]()
+[![Data Freshness](https://img.shields.io/badge/data-updated%20October%202026-brightgreen)]()
 [![Contributors](https://img.shields.io/badge/contributors-welcome-blue)]()
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-green)](LICENSE)
 
@@ -36,10 +36,13 @@ This is the **only visa database that understands document combinations**, not j
 
 | Visa Policy | Routes |
 |-------------|--------|
-| 🟢 Visa Free | ~5,040 |
-| 🟡 eVisa | ~4,914 |
-| 🟠 Visa on Arrival | ~2,898 |
-| 🔴 Visa Required | ~12,096 |
+| 🟢 Visa Free | 9,368 |
+| 🟡 eVisa | 4,454 |
+| 🟠 Visa on Arrival | 3,970 |
+| 🔴 Visa Required | 7,116 |
+| 🔵 ETA / No admission | 40 |
+
+*Counts as of 16 October 2026. Of the 24,948 routes, 981 are marked verified; the rest are still unverified. Verifying them against official government sources is what the bounties are for.*
 
 ---
 
@@ -56,24 +59,20 @@ diaspora-visa-data/
 │   ├── document-privileges/       # Document → unlocked countries
 │   │   ├── UK-visa.json          # UK visa privileges
 │   │   ├── US-visa.json          # US visa privileges
-│   │   ├── SCHENGEN-visa.json    # Schengen privileges
+│   │   ├── CANADA-pr.json        # Canadian permanent resident privileges
 │   │   └── ...
 │   │
-│   ├── countries/                 # Country reference data
-│   │   └── index.json            # All countries
-│   │
-│   └── changelog/                 # Audit trail
-│       └── 2026-03-04.json
+│   └── countries/                 # Country reference data
+│       └── index.json            # All countries
 │
 ├── sources/
-│   ├── verified-domains.json      # Trusted government domains
-│   └── pending-verification/      # Awaiting verification
+│   └── verified-domains.json      # Trusted government domains
 │
 ├── bounties/
 │   └── open.json                  # Available bounties
 │
-└── automation/
-    └── scripts/                   # Validation scripts
+└── .github/
+    └── workflows/                 # Source checks, labels, database sync
 ```
 
 ---
@@ -322,4 +321,4 @@ This data powers the [Diaspora AI Visa API](https://diasporaai.dev) — the only
 
 ---
 
-*Last updated: March 2026*
+*Last updated: October 2026*
