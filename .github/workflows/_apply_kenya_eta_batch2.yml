@@ -1,0 +1,155 @@
+name: Apply Kenya eTA batch 2
+
+on:
+  push:
+    branches:
+      - kenya-eta-2025-exemptions-batch-2
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: kenya-eta-2025-exemptions-batch-2
+          fetch-depth: 1
+
+      - name: Apply verified Kenya 2025 exemptions batch 2
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          DATA = Path('data/passport-requirements')
+          TODAY = '2026-10-16'
+          ROUTE_UPDATED = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
+          SOURCE_URL = 'https://etakenya.go.ke/how-to-apply'
+
+          RULES = {
+              'AO': ('Angola', 60, '60'),
+              'CM': ('Cameroon', 60, '60'),
+              'CI': ("Cote d'Ivoire", 60, '60'),
+              'SN': ('Senegal', 60, '60'),
+              'SC': ('Seychelles', 60, '60'),
+              'TN': ('Tunisia', 60, '60'),
+              'BB': ('Barbados', 90, '90'),
+              'BW': ('Botswana', 90, '90'),
+              'CY': ('Cyprus', 90, '90'),
+              'FJ': ('Fiji Island', 90, '90'),
+          }
+          ORDER = ['AO','CM','CI','SN','SC','TN','BB','BW','CY','FJ']
+
+          HEADINGS = {
+              '60': 'Nationals of the following African countries for a period not exceeding sixty (60) days－',
+              '90': 'Nationals of the following Countries for a period not exceeding ninety (90) days－',
+          }
+          PATHS = {
+              '60': 'Kenya eTA > How to Apply > Persons exempt from obtaining eTA > item 5 > 60-day African exemption list',
+              '90': 'Kenya eTA > How to Apply > Persons exempt from obtaining eTA > item 4 > 90-day exemption list',
+          }
+
+          def bucket(policy):
+              if policy == 'visa_free': return 'visa_free'
+              if policy in ('evisa','eta'): return 'evisa'
+              if policy in ('voa','visa_on_arrival'): return 'visa_on_arrival'
+              if policy == 'visa_required': return 'visa_required'
+              raise RuntimeError(f'Unknown policy bucket: {policy}')
+
+          def recompute(routes):
+              out = {'visa_free':0,'evisa':0,'visa_on_arrival':0,'visa_required':0,'total':len(routes)}
+              for r in routes:
+                  out[bucket(r['visa']['policy'])] += 1
+              return out
+
+          results=[]
+          for code in ORDER:
+              country, days, group = RULES[code]
+              path = DATA / f'{code}.json'
+              doc = json.loads(path.read_text(encoding='utf-8'))
+              top_last_updated = doc.get('lastUpdated')
+              route = next((r for r in doc['routes'] if r.get('to',{}).get('code') == 'KE'), None)
+              if route is None:
+                  raise RuntimeError(f'{code}: Kenya route not found')
+
+              old_policy = route['visa']['policy']
+              visa = route['visa']
+              visa['required'] = False
+              visa['policy'] = 'visa_free'
+              if 'type' in visa: visa['type'] = None
+              if 'freeDays' in visa: visa['freeDays'] = days
+              if 'visaFreeDays' in visa: visa['visaFreeDays'] = days
+              if 'maxStay' in visa: visa['maxStay'] = days
+              if 'maxStayDays' in visa: visa['maxStayDays'] = days
+              if 'evisa' in visa: visa['evisa'] = False
+              if 'evisaAvailable' in visa: visa['evisaAvailable'] = False
+              if 'onArrival' in visa: visa['onArrival'] = False
+              if 'visaOnArrival' in visa: visa['visaOnArrival'] = False
+              if 'multipleEntry' in visa: visa['multipleEntry'] = False
+              visa['notes'] = f'{country} passport holders are exempt from Kenya eTA under the 2025 rules for a stay not exceeding {days} days.'
+
+              dnotes = route.get('documents', {}).get('notes')
+              if isinstance(dnotes, str) and ('eta' in dnotes.lower() or 'electronic travel' in dnotes.lower()):
+                  route['documents']['notes'] = None
+
+              route.setdefault('meta', {})
+              route['meta']['confidence'] = 'verified'
+              route['meta']['lastChecked'] = TODAY
+              route['lastUpdated'] = ROUTE_UPDATED
+              route['source'] = {
+                  'url': SOURCE_URL,
+                  'governmentDomain': True,
+                  'accessedDate': TODAY,
+                  'verificationPath': PATHS[group] + f' > {country}',
+                  'exactQuote': HEADINGS[group] + '\n' + country,
+                  'confidence': 'verified',
+                  'notes': f'{country} is listed under the official {days}-day exemption group.'
+              }
+
+              doc['summary'] = recompute(doc['routes'])
+              if doc.get('lastUpdated') != top_last_updated:
+                  raise RuntimeError(f'{code}: file-level lastUpdated changed unexpectedly')
+
+              check = json.loads(json.dumps(doc))
+              kr = next(r for r in check['routes'] if r['to']['code']=='KE')
+              assert kr['visa']['policy']=='visa_free' and kr['visa']['required'] is False
+              assert kr['source']['url']==SOURCE_URL and kr['source']['governmentDomain'] is True
+              assert kr['source']['exactQuote'] == HEADINGS[group] + '\n' + country
+              assert check['summary']['total'] == len(check['routes'])
+
+              path.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+              results.append((code, old_policy, days))
+
+          print('UPDATED', results)
+          PY
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          targets=['AO','CM','CI','SN','SC','TN','BB','BW','CY','FJ']
+          for code in targets:
+              d=json.loads((Path('data/passport-requirements')/f'{code}.json').read_text(encoding='utf-8'))
+              r=next(x for x in d['routes'] if x['to']['code']=='KE')
+              assert r['visa']['policy']=='visa_free' and r['visa']['required'] is False
+              assert r['source']['accessedDate']=='2026-10-16'
+          print('JSON/route validation PASS')
+          PY
+
+          git diff --check
+          changed="$(git diff --name-only | sort)"
+          expected="$(printf '%s\n' data/passport-requirements/{AO,BB,BW,CI,CM,CY,FJ,SC,SN,TN}.json | sort)"
+          test "$changed" = "$expected" || { echo 'Unexpected changed files'; echo "$changed"; exit 1; }
+
+      - name: Commit data changes and remove temporary workflow
+        shell: bash
+        run: |
+          git config user.name 'zongsm-cmyk'
+          git config user.email 'zongsm-cmyk@users.noreply.github.com'
+          rm -f .github/workflows/_apply_kenya_eta_batch2.yml
+          git add data/passport-requirements/{AO,CM,CI,SN,SC,TN,BB,BW,CY,FJ}.json .github/workflows/_apply_kenya_eta_batch2.yml
+          git commit -m 'fix: update Kenya eTA 2025 exemptions batch 2'
+          git push origin HEAD:kenya-eta-2025-exemptions-batch-2
