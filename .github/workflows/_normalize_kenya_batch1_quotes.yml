@@ -1,0 +1,59 @@
+name: Normalize Kenya batch 1 exact quotes
+
+on:
+  push:
+    branches:
+      - kenya-eta-2025-exemptions-batch-1
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: kenya-eta-2025-exemptions-batch-1
+          fetch-depth: 1
+      - name: Normalize exact quotes
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          DATA=Path('data/passport-requirements')
+          RULES={
+            'MA':('Morocco','60'),'NG':('Nigeria','60'),'DZ':('Algeria','60'),'EG':('Egypt','60'),
+            'GH':('Ghana','90'),'ZA':('South Africa','90'),'ET':('Ethiopia','90'),
+            'UG':('Uganda','180'),'TZ':('Tanzania','180'),'RW':('Rwanda','180')
+          }
+          HEADINGS={
+            '60':'Nationals of the following African countries for a period not exceeding sixty (60) days－',
+            '90':'Nationals of the following Countries for a period not exceeding ninety (90) days－',
+            '180':'Citizens of the East African Partner States: These countries include Burundi, Democratic Republic of Congo, Rwanda, South Sudan, Tanzania and Uganda for a period not exceeding 180 days.'
+          }
+          for code,(country,group) in RULES.items():
+            p=DATA/f'{code}.json'
+            d=json.loads(p.read_text(encoding='utf-8'))
+            top=d.get('lastUpdated')
+            r=next(x for x in d['routes'] if x['to']['code']=='KE')
+            src=r['source']
+            src['exactQuote']=HEADINGS[group] if group=='180' else HEADINGS[group]+'\n'+country
+            assert d.get('lastUpdated')==top
+            p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('Normalized exact quotes for 10 routes')
+          PY
+          git diff --check
+          changed="$(git diff --name-only | sort)"
+          expected="$(printf '%s\n' data/passport-requirements/{DZ,EG,ET,GH,MA,NG,RW,TZ,UG,ZA}.json | sort)"
+          test "$changed" = "$expected" || { echo 'Unexpected changed files'; echo "$changed"; exit 1; }
+      - name: Commit normalized quotes and remove temporary workflow
+        shell: bash
+        run: |
+          git config user.name 'zongsm-cmyk'
+          git config user.email 'zongsm-cmyk@users.noreply.github.com'
+          rm -f .github/workflows/_normalize_kenya_batch1_quotes.yml
+          git add data/passport-requirements/{MA,NG,GH,ZA,UG,TZ,RW,DZ,EG,ET}.json .github/workflows/_normalize_kenya_batch1_quotes.yml
+          git commit -m 'fix: make Kenya batch 1 source quotes literal'
+          git push origin HEAD:kenya-eta-2025-exemptions-batch-1
