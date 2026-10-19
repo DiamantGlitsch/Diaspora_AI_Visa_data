@@ -1441,8 +1441,11 @@
         "maxStay": null,
         "evisa": false,
         "onArrival": false,
-        "multipleEntry": true,
-        "notes": "Visa required for Nigeria citizens. Apply at the Canada embassy/consulate or authorized visa center."
+        "notes": "Visa required for Nigeria citizens. Apply at the Canada embassy/consulate or authorized visa center. For a visitor visa, the published starting fee is CAD 100; additional fees may apply. A single-entry or multiple-entry visa is at the visa officer's discretion.",
+        "cost": {
+          "amount": 100,
+          "currency": "CAD"
+        }
       },
       "documents": {
         "passport": {
@@ -1471,7 +1474,25 @@
         "lastChecked": "2026-01-19",
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T03:24:40.953"
+      "lastUpdated": "2026-10-19",
+      "source": {
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/visitor-visa.html",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-19",
+        "verificationPath": "Canada.ca > Immigration and citizenship > Visit Canada > Visitor visa > Fees",
+        "exactQuote": "Starting from: $CAN 100",
+        "confidence": "verified",
+        "notes": "Scope: visitor starting fee and entry multiplicity only. Processing varies by country; no duration is added. Other route/document/transit fields are retained without re-verification.",
+        "additionalSources": [
+          {
+            "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/about-visitor-visa.html",
+            "governmentDomain": true,
+            "accessedDate": "2026-10-19",
+            "verificationPath": "Visitor visa > Who needs a visitor visa > Most travellers need a visitor visa",
+            "exactQuote": "A visa officer has discretion to issue you a single-entry visa or multiple entry visa"
+          }
+        ]
+      }
     },
     {
       "to": {
