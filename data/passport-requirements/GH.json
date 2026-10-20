@@ -6784,7 +6784,7 @@
       },
       "documents": {
         "passport": {
-          "minimumValidityMonths": 6,
+          "minimumValidityMonths": 3,
           "blankPagesRequired": 2
         },
         "requirements": {
@@ -6797,7 +6797,7 @@
           },
           "yellowFeverCertificate": true
         },
-        "notes": null
+        "notes": "For a Visitor Visa, the passport must remain valid for at least 3 months after the date the traveller plans to leave New Zealand."
       },
       "transit": {
         "visaRequired": null,
@@ -6809,7 +6809,17 @@
         "lastChecked": "2026-01-19",
         "source": "passport-index-dataset"
       },
-      "lastUpdated": "2026-01-19T03:05:53.124"
+      "lastUpdated": "2026-10-20",
+      "source": {
+        "url": "https://www.immigration.govt.nz/visas/visitor-visa/",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-20",
+        "pageSection": "Documents you need > When you apply",
+        "verificationPath": "Immigration New Zealand > Visas > Visitor Visa > Documents you need > When you apply",
+        "exactQuote": "must be valid for at least 3 months after the date you plan to leave New Zealand.",
+        "confidence": "verified",
+        "notes": "Verification covers only passport validity for the Visitor Visa, measured after planned departure from New Zealand. Other visa, document, entry and transit fields were not reverified."
+      }
     },
     {
       "to": {
