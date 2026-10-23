@@ -1,0 +1,124 @@
+{
+  "document": {
+    "type": "residence_permit",
+    "country": "US",
+    "countryName": "United States",
+    "categories": [
+      "permanent_resident"
+    ],
+    "description": "US Green Card: verified visitor visa exemptions for Belize, the Dominican Republic, Georgia, Mexico and Serbia. This is a partial destination list, separate from US visa privileges."
+  },
+  "lastUpdated": "2026-10-23",
+  "totalUnlocked": 5,
+  "unlocks": [
+    {
+      "country": "BZ",
+      "countryName": "Belize",
+      "region": "central_america",
+      "conditions": "Hold a valid US Permanent Residence Card. The Belize entry-visa exemption covers visits of no more than 30 days.",
+      "maxStayDays": 30,
+      "visaOnArrival": false,
+      "evisaRequired": false,
+      "lastUpdated": "2026-10-23",
+      "source": {
+        "url": "https://immigration.gov.bz/visa/visa-who-qualify/",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-23",
+        "confidence": "verified",
+        "pageSection": "Belize Immigration > Visa > Do You Need a Visa to Visit Belize > exemption list, United States bullet",
+        "verificationPath": "Belize Immigration > Visa > Do You Need a Visa to Visit Belize > exemption list, United States bullet",
+        "exactQuote": "Permanent Residence Card from the United States of America"
+      },
+      "notes": "This records the permanent-residence-card exemption separately from US visa holders. Stays beyond 30 days require the applicable Immigration Office extension."
+    },
+    {
+      "country": "DO",
+      "countryName": "Dominican Republic",
+      "region": "caribbean",
+      "conditions": "Hold valid permanent residence in the United States and a valid passport. Entry without a Dominican visa is for tourism using a Tourist Card.",
+      "maxStayDays": 30,
+      "visaOnArrival": false,
+      "evisaRequired": false,
+      "lastUpdated": "2026-10-23",
+      "source": {
+        "url": "https://servicios360.mirex.gob.do/visas/",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-23",
+        "confidence": "verified",
+        "pageSection": "MIREX > Portal Unico de Servicios > Visas > Decreto Num. 691-07",
+        "verificationPath": "MIREX > Portal Unico de Servicios > Visas > Decreto Num. 691-07",
+        "exactQuote": "extranjeros con residencia permanente"
+      },
+      "notes": "Tourist Card access is limited to tourism and does not authorize work, study or residence. DGII describes a 30-day initial stay, with extensions treated separately. The Tourist Card is an entry tax and is generally included in air tickets issued abroad.",
+      "staySource": {
+        "url": "https://www.dgii.gov.do/sobreTarjetaTurista/Paginas/default.aspx",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-23",
+        "confidence": "verified",
+        "pageSection": "DGII > Tarjeta de Turista > Sobre Tarjeta de Turista",
+        "verificationPath": "DGII > Tarjeta de Turista > Sobre Tarjeta de Turista",
+        "exactQuote": "un período máximo de 30 días."
+      }
+    },
+    {
+      "country": "GE",
+      "countryName": "Georgia",
+      "region": "asia",
+      "conditions": "Hold a US permanent resident card valid on the day of entry into Georgia and present the travel and/or other appropriate document proving its validity. Visa-free stays are limited to 90 calendar days in any 180-day period.",
+      "maxStayDays": 90,
+      "visaOnArrival": false,
+      "evisaRequired": false,
+      "lastUpdated": "2026-10-23",
+      "source": {
+        "url": "https://gc-pfiles.mfa.gov.ge/DocFiles/2025/5/13/LegalAct/37/de83b55e-be80-48ba-b05c-081d4848616d.pdf",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-23",
+        "confidence": "verified",
+        "pageSection": "Georgian MFA legal-act PDF > Ordinance No. 256 > annex item 3 (United States), entry conditions 1-2; 2025 amendment in condition 3",
+        "verificationPath": "Georgian MFA legal-act PDF > Ordinance No. 256 > annex item 3 (United States), entry conditions 1-2; 2025 amendment in condition 3",
+        "exactQuote": "ამერიკის შეერთებული შტატები"
+      },
+      "notes": "The source is the Georgian text incorporating Ordinance No. 122 of 17 April 2025. Its extra one-year validity condition concerns specified Gulf-issued documents, not US residence permits. This is a rolling 90/180 allowance, not 90 days per entry."
+    },
+    {
+      "country": "MX",
+      "countryName": "Mexico",
+      "region": "north_america",
+      "conditions": "Present a valid passport and proof of permanent residence in the United States for a tourist/visitor stay without paid activities.",
+      "maxStayDays": 180,
+      "visaOnArrival": false,
+      "evisaRequired": false,
+      "lastUpdated": "2026-10-23",
+      "source": {
+        "url": "https://embamex.sre.gob.mx/australia/images/pdf/2022/VisVisaMex22-1.pdf",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-23",
+        "confidence": "verified",
+        "pageSection": "Embassy of Mexico in Australia > Visitor visa for Mexico PDF > page 1, General Information and Do I need a Visitor Visa?",
+        "verificationPath": "Embassy of Mexico in Australia > Visitor visa for Mexico PDF > page 1, General Information and Do I need a Visitor Visa?",
+        "exactQuote": "you do not need a visitor visa"
+      },
+      "notes": "180 days is an upper limit, not an automatic grant: immigration officers determine the admitted period from the intended activities and supporting documents. The permanent-residence exemption is separate from the US visa exemption; it does not authorize paid work or residence."
+    },
+    {
+      "country": "RS",
+      "countryName": "Serbia",
+      "region": "europe",
+      "conditions": "Hold a valid US residence permit and a valid national passport. Emergency travel documents and documents issued under international conventions are excluded. Stay up to 90 days during a six-month period, within the residence permit's validity.",
+      "maxStayDays": 90,
+      "visaOnArrival": false,
+      "evisaRequired": false,
+      "lastUpdated": "2026-10-23",
+      "source": {
+        "url": "https://www.mfa.gov.rs/en/citizens/travel-serbia/visa-requirements",
+        "governmentDomain": true,
+        "accessedDate": "2026-10-23",
+        "confidence": "verified",
+        "pageSection": "Serbian MFA > Citizens > Travel to Serbia > Visa Requirements > opening decision and residence-card paragraphs",
+        "verificationPath": "Serbian MFA > Citizens > Travel to Serbia > Visa Requirements > opening decision and residence-card paragraphs",
+        "exactQuote": "residence permit in the countries of the Schengen area, EU or the United States of America"
+      },
+      "notes": "A residence card must be presented together with a valid passport. The six-month aggregate limit is not a fresh 90 days per entry. This entry records US permanent residence separately from US visas."
+    }
+  ]
+}
